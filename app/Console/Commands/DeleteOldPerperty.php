@@ -40,7 +40,8 @@ class DeleteOldPerperty extends Command
     {
         $thirtyDaysAgo = Carbon::now()->subDays(30);
         Property::where('created_at', '<', $thirtyDaysAgo)->delete();
-
+        $thirtyDaysAgo->created_at = now(); // Update the "modified_on" field
+        $thirtyDaysAgo->save();
         $this->info('Old records deleted successfully.');
     }
 }

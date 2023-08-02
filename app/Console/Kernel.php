@@ -18,8 +18,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command(DeleteOldPerperty::class)->hourly();
-       // $schedule->command('property:updateData')->everyMinute();  
+       // $schedule->command(DeleteOldPerperty::class)->hourly();
+        $schedule->command('property:updateData')->everyMinute();  
     }
 
     /**
